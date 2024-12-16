@@ -1,8 +1,6 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"}
-
     stages {
         stage('Checkout') {
             steps {
@@ -12,7 +10,6 @@ pipeline {
 
      stage('Install Dependencies') {
             steps {
-                git credentialsId: 'Github-Webhooks', url: 'https://github.com/Rameshvarshan04/simple-webapp.git'
                 sh 'npm install'
             }
         }
