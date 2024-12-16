@@ -9,15 +9,10 @@ pipeline {
         }
 
      stage('Install Dependencies') {
-    steps {
-        script {
-            // Use NodeJS tool
-            withEnv(["PATH+NODEJS=${tool 'NodeJS '}/bin"]) {
+            steps {
                 sh 'npm install'
             }
         }
-    }
-}
 
         stage('Build') {
             steps {
