@@ -8,11 +8,16 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
+     stage('Install Dependencies') {
+    steps {
+        script {
+            // Use NodeJS tool
+            withEnv(["PATH+NODEJS=${tool 'NodeJS 16'}/bin"]) {
                 sh 'npm install'
             }
         }
+    }
+}
 
         stage('Build') {
             steps {
