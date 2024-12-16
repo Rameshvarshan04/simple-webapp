@@ -12,7 +12,7 @@ pipeline {
     steps {
         script {
             // Use NodeJS tool
-            withEnv(["PATH+NODEJS=${tool 'NodeJS 16'}/bin"]) {
+            withEnv(["PATH+NODEJS=${tool 'NodeJS '}/bin"]) {
                 sh 'npm install'
             }
         }
