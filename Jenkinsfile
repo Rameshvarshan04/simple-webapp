@@ -11,7 +11,7 @@ pipeline {
      stage('Install Dependencies') {
     steps {
         script {
-            withEnv(["PATH+NODEJS=${tool 'Node.JS 16'}/bin"]) {
+            withEnv(["PATH+NODEJS=${tool 'nodejs'}/bin"]) {
                 sh 'npm install'
             }
         }
